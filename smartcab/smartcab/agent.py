@@ -99,7 +99,7 @@ class LearningAgent(Agent):
         # Set the agent state and default action
         self.state = state
         self.next_waypoint = self.planner.next_waypoint()
-        action = None
+        action = random.choice(self.valid_actions)
 
         ########### 
         ## TO DO ##
@@ -107,7 +107,8 @@ class LearningAgent(Agent):
         # When not learning, choose a random action
         # When learning, choose a random action with 'epsilon' probability
         #   Otherwise, choose an action with the highest Q-value for the current state
- 
+
+
         return action
 
 
