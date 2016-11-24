@@ -4,23 +4,29 @@ class RoutePlanner(object):
     """ Complex route planner that is meant for a perpendicular grid network. """
 
     def __init__(self, env, agent):
+
         self.env = env
         self.agent = agent
         self.destination = None
 
     def route_to(self, destination=None):
+
         """ Select the destination if one is provided, otherwise choose a random intersection. """
 
         self.destination = destination if destination is not None else random.choice(self.env.intersections.keys())
 
     def next_waypoint(self):
+
         """ Creates the next waypoint based on current heading, location,
             intended destination and L1 distance from destination. """
 
         # Collect global location details
         bounds = self.env.grid_size
+
         location = self.env.agent_states[self.agent]['location']
+
         heading = self.env.agent_states[self.agent]['heading']
+
 
         delta_a = (self.destination[0] - location[0], self.destination[1] - location[1])
         delta_b = (bounds[0] + delta_a[0] if delta_a[0] <= 0 else delta_a[0] - bounds[0], \

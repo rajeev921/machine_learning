@@ -11,14 +11,17 @@ class TrafficLight(object):
     valid_states = [True, False]  # True = NS open; False = EW open
 
     def __init__(self, state=None, period=None):
+
         self.state = state if state is not None else random.choice(self.valid_states)
         self.period = period if period is not None else random.choice([2, 3, 4, 5])
         self.last_updated = 0
 
     def reset(self):
+
         self.last_updated = 0
 
     def update(self, t):
+
         if t - self.last_updated >= self.period:
             self.state = not self.state  # Assuming state is boolean
             self.last_updated = t
@@ -33,6 +36,7 @@ class Environment(object):
     hard_time_limit = -100  # Set a hard time limit even if deadline is not enforced.
 
     def __init__(self, verbose=False, num_dummies=100, grid_size = (8, 6)):
+
         self.num_dummies = num_dummies  # Number of dummy driver agents in the environment
         self.verbose = verbose # If debug output should be given
 
@@ -45,13 +49,13 @@ class Environment(object):
 
         # Road network
         self.grid_size = grid_size  # (columns, rows)
-        self.bounds = (1, 2, self.grid_size[0], self.grid_size[1] + 1)
+        self.bounds = (1, 2, self.grid_size[0], self.grid_size[1] + 1) # (1, 2, 8, 7)
         self.block_size = 100
         self.hang = 0.6
         self.intersections = OrderedDict()
         self.roads = []
-        for x in xrange(self.bounds[0], self.bounds[2] + 1):
-            for y in xrange(self.bounds[1], self.bounds[3] + 1):
+        for x in xrange(self.bounds[0], self.bounds[2] + 1):      #(1, 9)
+            for y in xrange(self.bounds[1], self.bounds[3] + 1):  #(2, 8)
                 self.intersections[(x, y)] = TrafficLight()  # A traffic light at each intersection
 
         for a in self.intersections:
@@ -89,13 +93,15 @@ class Environment(object):
         }
 
     def create_agent(self, agent_class, *args, **kwargs):
+
         """ When called, create_agent creates an agent in the environment. """
 
         agent = agent_class(self, *args, **kwargs)
         self.agent_states[agent] = {'location': random.choice(self.intersections.keys()), 'heading': (0, 1)}
         return agent
 
-    def set_primary_agent(self, agent, enforce_deadline=False):
+    def set_primary_agent(self, agent, enforce_deadline=True):
+
         """ When called, set_primary_agent sets 'agent' as the primary agent.
             The primary agent is the smartcab that is followed in the environment. """
 
@@ -104,6 +110,7 @@ class Environment(object):
         self.enforce_deadline = enforce_deadline
 
     def reset(self, testing=False):
+
         """ This function is called at the beginning of a new trial. """
 
         self.done = False
@@ -412,6 +419,7 @@ class Agent(object):
     """Base class for all agents."""
 
     def __init__(self, env):
+
         self.env = env
         self.state = None
         self.next_waypoint = None
@@ -419,15 +427,19 @@ class Agent(object):
         self.primary_agent = False
 
     def reset(self, destination=None, testing=False):
+
         pass
 
     def update(self):
+
         pass
 
     def get_state(self):
+
         return self.state
 
     def get_next_waypoint(self):
+
         return self.next_waypoint  
 
 
@@ -435,11 +447,13 @@ class DummyAgent(Agent):
     color_choices = ['cyan', 'red', 'blue', 'green', 'orange', 'magenta', 'yellow']
 
     def __init__(self, env):
+
         super(DummyAgent, self).__init__(env)  # sets self.env = env, state = None, next_waypoint = None, and a default color
         self.next_waypoint = random.choice(Environment.valid_actions[1:])
         self.color = random.choice(self.color_choices)
 
     def update(self):
+
         """ Update a DummyAgent to move randomly under legal traffic laws. """
 
         inputs = self.env.sense(self)
