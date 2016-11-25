@@ -35,7 +35,6 @@ class Simulator(object):
     }
 
     def __init__(self, env, size=None, update_delay=0.01, display=True, log_metrics=True, optimized=False):
-
         self.env = env
         self.size = size if size is not None else ((self.env.grid_size[0] + 1) * self.env.block_size, (self.env.grid_size[1] + 2) * self.env.block_size)
         self.width, self.height = self.size
@@ -250,7 +249,7 @@ class Simulator(object):
         if self.display:
             self.pygame.display.quit()  # shut down pygame
 
-    def render_text(self, trial, testing=True):
+    def render_text(self, trial, testing=False):
         """ This is the non-GUI render display of the simulation. 
             Simulated trial data will be rendered in the terminal/command prompt. """
 
@@ -301,10 +300,10 @@ class Simulator(object):
                 print "Agent not set to learn."
 
                 
-    def render(self, trial, testing=True):
+    def render(self, trial, testing=False):
         """ This is the GUI render display of the simulation. 
             Supplementary trial data can be found from render_text. """
-
+        
         # Reset the screen.
         self.screen.fill(self.bg_color)
 
@@ -448,7 +447,7 @@ class Simulator(object):
 
     def pause(self):
         """ When the GUI is enabled, this function will pause the simulation. """
-
+        
         abs_pause_time = time.time()
         self.font = self.pygame.font.Font(None, 30)
         pause_text = "Simulation Paused. Press any key to continue. . ."
