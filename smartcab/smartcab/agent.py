@@ -69,8 +69,13 @@ class LearningAgent(Agent):
         # When learning, check if the state is in the Q-table
         #   If it is not, create a dictionary in the Q-table for the current 'state'
         #   For each action, set the Q-value for the state-action pair to 0
-        
-        state = (waypoint, inputs['light'], inputs['oncoming'], inputs['left'], inputs['right'])
+
+        light = inputs['light']
+        oncoming = inputs['oncoming']
+        left = inputs['left']
+        #right = inputs['right']
+
+        state = (waypoint, light, oncoming, left)
 
         return state
 
@@ -84,9 +89,9 @@ class LearningAgent(Agent):
         ###########
         # Calculate the maximum Q-value of all actions for a given state
 
-        maxQ = max(self.Q[self.state], key=(lambda key: self.Q[self.state][key]))
+        maxQ_key = max(self.Q[self.state], key=(lambda key: self.Q[self.state][key]))
 
-        return maxQ 
+        return maxQ_key
 
 
     def createQ(self, state):
@@ -102,6 +107,14 @@ class LearningAgent(Agent):
         if self.learning is True:
             if state not in self.Q.keys():
                 self.Q[state] = {'left': 0, 'right': 0, 'forward': 0, None: 0}
+
+        # DEBUGGING#
+        #print("\n")
+        #print ("Current Q[state] = {} ",self.Q[state])
+        #print("\n Key values \n")
+        #for key, value in self.Q.iteritems():
+        #    print("Key value from dictionary {} is {}".format(key, value))
+        #print("\n")
 
         return
 
@@ -123,12 +136,26 @@ class LearningAgent(Agent):
         #   Otherwise, choose an action with the highest Q-value for the current state
 
         random_p = random.uniform(0, 1)
-
+        print(random_p)
         if self.learning is True:
             if random_p <= 1 - self.epsilon:  # (1-epsilon probability choose random)
-                action = self.get_maxQ(state)
-            else:                                # if not learning
+                maxQ_key = self.get_maxQ(state)
+                maxQ_value = self.Q[self.state][maxQ_key]
+
+                top_actions = dict()
+
+                state_dict = self.Q[self.state]
+                for action, reward in state_dict.iteritems():
+                    if reward == maxQ_value:
+                        top_actions[action] = reward
+
+                action = random.choice(
+                    top_actions.keys())
+            else:
                 action = random.choice(self.valid_actions)
+
+        elif self.learning is False:
+            action = random.choice(self.valid_actions)
 
         return action
 
@@ -144,8 +171,6 @@ class LearningAgent(Agent):
         # When learning, implement the value iteration update rule
         #   Use only the learning rate 'alpha' (do not use the discount factor 'gamma')
 
-        reward = self.env.act(self, action)
-
         self.Q[self.state][action] = (1 - self.alpha) * self.Q[self.state][action] + self.alpha * (reward)
 
         return
@@ -155,7 +180,6 @@ class LearningAgent(Agent):
         """ The update function is called when a time step is completed in the 
             environment for a given trial. This function will build the agent
             state, choose an action, receive a reward, and learn if enabled. """
-
         state = self.build_state()          # Get current state
         self.createQ(state)                 # Create 'state' in Q-table
         action = self.choose_action(state)  # Choose an action
