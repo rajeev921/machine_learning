@@ -8,7 +8,7 @@ class LearningAgent(Agent):
     """ An agent that learns to drive in the Smartcab world.
         This is the object you will be modifying. """ 
 
-    def __init__(self, env, learning=True, epsilon=0, alpha=0.1):
+    def __init__(self, env, learning=True, epsilon=1.0, alpha=0.5):
         super(LearningAgent, self).__init__(env)     # Set the agent in the evironment 
         self.planner = RoutePlanner(self.env, self)  # Create a route planner
         self.valid_actions = self.env.valid_actions  # The set of valid actions
@@ -43,11 +43,20 @@ class LearningAgent(Agent):
         self.total_trials += 1
         self.a = 0.025
 
+        # Default Q-Learning
+        """
         if testing is True:  # self.epsilon < self.tolerance: # i.e. testing is true
             self.epsilon = 0
             self.alpha = 0
         else:
-            #self.epsilon = 1 - (0.05 * self.total_trials)
+            self.epsilon = 1 - (0.05 * self.total_trials)
+        """
+
+        # Improved Q-Learning
+        if testing is True:  # self.epsilon < self.tolerance: # i.e. testing is true
+            self.epsilon = 0
+            self.alpha = 0
+        elif self.learning is True:
             self.epsilon = float(1) / math.exp(float(self.a * self.total_trials))
 
         return None
@@ -89,9 +98,9 @@ class LearningAgent(Agent):
         ###########
         # Calculate the maximum Q-value of all actions for a given state
 
-        maxQ_key = max(self.Q[self.state], key=(lambda key: self.Q[self.state][key]))
+        maxQ = max(self.Q[self.state], key=(lambda key: self.Q[self.state][key]))
 
-        return maxQ_key
+        return maxQ
 
 
     def createQ(self, state):
@@ -109,12 +118,14 @@ class LearningAgent(Agent):
                 self.Q[state] = {'left': 0, 'right': 0, 'forward': 0, None: 0}
 
         # DEBUGGING#
-        #print("\n")
-        #print ("Current Q[state] = {} ",self.Q[state])
-        #print("\n Key values \n")
-        #for key, value in self.Q.iteritems():
-        #    print("Key value from dictionary {} is {}".format(key, value))
-        #print("\n")
+        """
+        print("\n")
+        print ("Current Q[state] = {} ",self.Q[state])
+        print("\n Key values \n")
+        for key, value in self.Q.iteritems():
+            print("Key value from dictionary {} is {}".format(key, value))
+        print("\n")
+        """
 
         return
 
@@ -126,7 +137,7 @@ class LearningAgent(Agent):
         # Set the agent state and default action
         self.state = state
         self.next_waypoint = self.planner.next_waypoint()
-        action = random.choice(self.valid_actions)
+        # action = random.choice(self.valid_actions)
 
         ########### 
         ## TO DO ##
@@ -136,11 +147,11 @@ class LearningAgent(Agent):
         #   Otherwise, choose an action with the highest Q-value for the current state
 
         random_p = random.uniform(0, 1)
-        print(random_p)
+        # print(random_p)
         if self.learning is True:
             if random_p <= 1 - self.epsilon:  # (1-epsilon probability choose random)
-                maxQ_key = self.get_maxQ(state)
-                maxQ_value = self.Q[self.state][maxQ_key]
+                maxQ = self.get_maxQ(state)
+                maxQ_value = self.Q[self.state][maxQ]
 
                 top_actions = dict()
 
@@ -170,8 +181,8 @@ class LearningAgent(Agent):
         ###########
         # When learning, implement the value iteration update rule
         #   Use only the learning rate 'alpha' (do not use the discount factor 'gamma')
-
-        self.Q[self.state][action] = (1 - self.alpha) * self.Q[self.state][action] + self.alpha * (reward)
+        if self.learning is True:
+            self.Q[self.state][action] = (1 - self.alpha) * self.Q[self.state][action] + self.alpha * (reward)
 
         return
 
@@ -212,7 +223,7 @@ def run():
     ##############
     # Follow the driving agent
     # Flags:
-    #   enforce_deadline - set to True to enforce a deadline metric
+    # enforce_deadline - set to True to enforce a deadline metric
     env.set_primary_agent(agent)
 
     ##############
