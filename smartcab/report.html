@@ -11813,7 +11813,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Import the visualization code</span>
@@ -18084,8 +18084,7 @@ RK5CYII=
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer:</strong> 
-An example of an optimal policy would be if light=Red regardless of what the inputs are the agent's action should be 'None' (except when waypoint=right and left=none; the traffic laws allow for cars to turn right); an example of what the states could be: (waypoint: Forward, light: Red, oncoming: None, left: None, right: None). Another example of an optimal policy is if states = (waypoint: Forward, light: Green, oncoming: None, left: None, right: None), the Agent would move forward.
-The policy is correct for most states but a few where there are some states where the agent hasn't been exposed to the optimal action (hence its reward remains at zero) but has been exposed to the other actions thus when picking the action that brings max reward it doesn't choose the expected optimal policy.</p>
+An example of an optimal policy would be if light=Red regardless of what the inputs are the agent's action should be 'None' (except when waypoint=right and left=none; the traffic laws allow for cars to turn right); an example of what the states could be: (waypoint: Forward, light: Red, oncoming: None, left: None, right: None). Another example of an optimal policy is if states = (waypoint: Forward, light: Green, oncoming: None, left: None, right: None), the Agent would move forward.</p>
 <p>From looking at the Qtable generated an example of a correct policy where all state-action rewards are recorded: (waypoint='left', light='red', oncoming='left', left='forward'), rewards:</p>
 <p>-- forward : -26.65 -- right : -5.98 -- None : 2.20 -- left : -12.24</p>
 <p>This is the correct policy because the light is red and the correct action in this state is None (which is the only action rewared a positive). The other actions receive a negative reward with 'forward' being the most negative; I believe this is correct because this is not the direction the planner has told the driver to go. Next, 'left' receives the second most negative reward this is because not only is it a red light but also because there is a car to the left which will cause a collision. Right receives the least negative and is the second optimal action because although it is not the right direction of travel, the US laws allows the agent to turn right if there is no oncoming traffic from the left; with the car to the left of the agent turning left this means no colision would've been caused and hence I believe this is the correct policy for this state/action combination.</p>
@@ -18120,19 +18119,6 @@ The policy is correct for most states but a few where there are some states wher
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer:</strong></p>
-<p>Here are some questions to guide you towards the characteristics we're looking for here.</p>
-<p>Let's start with the characteristic of the agent:</p>
-<p>Does it have a local viewpoint? Does it know the concrete location of the destination?
-In other words, can we determine how far the agent is from the destination by looking at the current state?
-Thus, is it possible to propagate rewards towards states that are "close to the destination"?
-And here are the questions for the characteristic of the environment:</p>
-<p>Let's assume that the previous issue was not present; the states are linked to specific intersections, and because of that it is possible to determine how close each state is to the current destination.
-Does the location of the destination stay the same over the trials?
-Thus, if we propagated rewards away from the destination, after a while, how many of the intersections would we be propagating rewards from?</p>
-<p>Here are some hints to help you get going in the final (optional) question:</p>
-<p>What kind of information does the smartcab receive from the environment? Does it receive "global" information, such as its position relative to the destination? Or merely "local" information such as the status of the intersection it's in?
-Do the agent and the destination begin each trial in the same place, or do they move around? Can the agent learn the best route by rote?
-Is there an "extra reward" for reaching the destination? In other words, is there anything to propagate back, other than the reward for obeying traffic rules and following the planner?</p>
 
 </div>
 </div>

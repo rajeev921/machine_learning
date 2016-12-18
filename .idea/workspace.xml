@@ -2,14 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="df9a4caf-cdae-456b-bf0a-1d06ce645dbd" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/machine-learning-master.iml" afterPath="$PROJECT_DIR$/.idea/machine-learning-master.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sim_improved-learning.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sim_improved-learning.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/titanic_survival_exploration/titanic_visualizations.py" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/smartcab/logs/sim_default-learning.csv" afterPath="$PROJECT_DIR$/smartcab/logs/sim_default-learning.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/boston_housing/boston_housing.ipynb" afterPath="$PROJECT_DIR$/boston_housing/boston_housing.ipynb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/smartcab/.idea/workspace.xml" afterPath="$PROJECT_DIR$/smartcab/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/smartcab/logs/sim_improved-learning.csv" afterPath="$PROJECT_DIR$/smartcab/logs/sim_improved-learning.csv" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/smartcab/logs/sim_improved-learning.txt" afterPath="$PROJECT_DIR$/smartcab/logs/sim_improved-learning.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/smartcab/logs/sim_no-learning.csv" afterPath="$PROJECT_DIR$/smartcab/logs/sim_no-learning.csv" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/smartcab/smartcab.ipynb" afterPath="$PROJECT_DIR$/smartcab/smartcab.ipynb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/student_intervention/student_intervention.ipynb" afterPath="$PROJECT_DIR$/student_intervention/student_intervention.ipynb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/titanic_survival_exploration/README.md" afterPath="$PROJECT_DIR$/titanic_survival_exploration/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/titanic_survival_exploration/titanic_survival_exploration.ipynb" afterPath="$PROJECT_DIR$/titanic_survival_exploration/titanic_survival_exploration.ipynb" />
     </list>
     <ignored path="machine-learning-master.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,14 +33,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="agent.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="agent.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/smartcab/smartcab/agent.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
+            <state relative-caret-position="22">
               <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
-                <marker date="1480448302000" expanded="true" signature="6749:7081" ph="..." />
               </folding>
             </state>
           </provider>
@@ -45,18 +48,20 @@
       <file leaf-file-name="environment.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/smartcab/smartcab/environment.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="44">
-              <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="838">
+              <caret line="55" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#11#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="simulator.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="simulator.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/smartcab/smartcab/simulator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="836">
-              <caret line="38" column="31" selection-start-line="38" selection-start-column="31" selection-end-line="38" selection-end-column="31" />
+            <state relative-caret-position="838">
+              <caret line="416" column="31" selection-start-line="416" selection-start-column="31" selection-end-line="416" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -81,9 +86,9 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/smartcab/smartcab/planner.py" />
-        <option value="$PROJECT_DIR$/smartcab/smartcab/environment.py" />
-        <option value="$PROJECT_DIR$/smartcab/smartcab/simulator.py" />
         <option value="$PROJECT_DIR$/smartcab/smartcab/agent.py" />
+        <option value="$PROJECT_DIR$/smartcab/smartcab/simulator.py" />
+        <option value="$PROJECT_DIR$/smartcab/smartcab/environment.py" />
       </list>
     </option>
   </component>
@@ -299,7 +304,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1050" extended-state="0" />
+    <frame x="-9" y="-9" width="1938" height="1050" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.10415293" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
@@ -361,14 +366,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/smartcab/smartcab/environment.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/smartcab/smartcab/simulator.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="792">
@@ -391,7 +388,6 @@
           <caret line="193" column="13" selection-start-line="193" selection-start-column="13" selection-end-line="193" selection-end-column="13" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
-            <marker date="1480448302000" expanded="true" signature="6749:7081" ph="..." />
           </folding>
         </state>
       </provider>
@@ -400,7 +396,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -426,7 +424,6 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
-            <marker date="1480448302000" expanded="true" signature="6749:7081" ph="..." />
           </folding>
         </state>
       </provider>
@@ -435,7 +432,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="594">
           <caret line="27" column="16" selection-start-line="27" selection-start-column="16" selection-end-line="27" selection-end-column="16" />
-          <folding />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -461,7 +460,6 @@
           <caret line="177" column="16" selection-start-line="177" selection-start-column="16" selection-end-line="177" selection-end-column="16" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
-            <marker date="1480448302000" expanded="true" signature="6749:7081" ph="..." />
           </folding>
         </state>
       </provider>
@@ -470,7 +468,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -496,7 +496,6 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
-            <marker date="1480448302000" expanded="true" signature="6749:7081" ph="..." />
           </folding>
         </state>
       </provider>
@@ -505,7 +504,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3850">
           <caret line="175" column="67" selection-start-line="175" selection-start-column="60" selection-end-line="175" selection-end-column="67" />
-          <folding />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -515,7 +516,6 @@
           <caret line="164" column="13" selection-start-line="164" selection-start-column="8" selection-end-line="164" selection-end-column="13" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
-            <marker date="1480448302000" expanded="true" signature="6749:7081" ph="..." />
           </folding>
         </state>
       </provider>
@@ -524,7 +524,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -550,7 +552,6 @@
           <caret line="86" column="12" selection-start-line="86" selection-start-column="12" selection-end-line="86" selection-end-column="12" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
-            <marker date="1480448302000" expanded="true" signature="6749:7081" ph="..." />
           </folding>
         </state>
       </provider>
@@ -559,7 +560,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="10186">
           <caret line="463" column="43" selection-start-line="463" selection-start-column="43" selection-end-line="463" selection-end-column="43" />
-          <folding />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -585,7 +588,6 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
-            <marker date="1480448302000" expanded="true" signature="6749:7081" ph="..." />
           </folding>
         </state>
       </provider>
@@ -594,7 +596,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="10494">
           <caret line="477" column="43" selection-start-line="477" selection-start-column="43" selection-end-line="477" selection-end-column="43" />
-          <folding />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -620,7 +624,6 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
-            <marker date="1480448302000" expanded="true" signature="6749:7081" ph="..." />
           </folding>
         </state>
       </provider>
@@ -629,7 +632,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="9526">
           <caret line="433" column="0" selection-start-line="433" selection-start-column="0" selection-end-line="433" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -655,7 +660,6 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
-            <marker date="1480448302000" expanded="true" signature="6749:7081" ph="..." />
           </folding>
         </state>
       </provider>
@@ -664,7 +668,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="594">
           <caret line="27" column="8" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="8" />
-          <folding />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -690,7 +696,6 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
-            <marker date="1480448302000" expanded="true" signature="6749:7081" ph="..." />
           </folding>
         </state>
       </provider>
@@ -699,7 +704,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2156">
           <caret line="98" column="60" selection-start-line="98" selection-start-column="60" selection-end-line="98" selection-end-column="60" />
-          <folding />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -725,7 +732,6 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
-            <marker date="1480448302000" expanded="true" signature="6749:7081" ph="..." />
           </folding>
         </state>
       </provider>
@@ -734,7 +740,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="638">
           <caret line="29" column="4" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="4" />
-          <folding />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -776,30 +784,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/smartcab/smartcab/environment.py">
+    <entry file="file://$PROJECT_DIR$/titanic_survival_exploration/titanic_visualizations.pyc">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/smartcab/smartcab/simulator.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="836">
-          <caret line="38" column="31" selection-start-line="38" selection-start-column="31" selection-end-line="38" selection-end-column="31" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/smartcab/smartcab/agent.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state relative-caret-position="22">
           <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
-            <marker date="1480448302000" expanded="true" signature="6749:7081" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smartcab/smartcab/environment.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="838">
+          <caret line="55" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smartcab/smartcab/simulator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="838">
+          <caret line="416" column="31" selection-start-line="416" selection-start-column="31" selection-end-line="416" selection-end-column="31" />
+          <folding />
         </state>
       </provider>
     </entry>
