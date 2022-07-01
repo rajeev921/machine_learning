@@ -85,7 +85,7 @@ numba==0.28.1
 numexpr==2.6.1
 numpy==1.11.2
 odo==0.5.0
-openpyxl==2.3.2
+openpyxl==2.4.2
 pandas==0.18.1
 partd==0.3.6
 path.py==0.0.0
